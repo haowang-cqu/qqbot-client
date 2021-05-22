@@ -19,7 +19,7 @@ def send_private_msg(user_id: int, message: str, auto_escape: bool=False) -> int
             "message": message,
             "auto_escape": auto_escape
         },
-        timeout=0.5
+        timeout=5
     )
     return resp.status_code
 
@@ -35,7 +35,7 @@ def send_group_msg(group_id: int, message: str, auto_escape: bool=False) -> int:
             "message": message,
             "auto_escape": auto_escape
         },
-        timeout=0.5
+        timeout=5
     )
     return resp.status_code
     
@@ -54,7 +54,7 @@ def send_msg(message: str, auto_escape: bool=False, message_type: MessageType = 
             "message": message,
             "auto_escape": auto_escape
         },
-        timeout=0.5
+        timeout=5
     )
     return resp.status_code
 
@@ -65,6 +65,6 @@ def clean_cache() -> int:
     endpoint = "/clean_cache"
     resp = requests.get(
         url=base_url+endpoint,
-        timeout=0.5
+        timeout=5
     )
     return resp.status_code
