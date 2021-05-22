@@ -5,7 +5,7 @@ import requests
 from models import MessageType
 from typing import Optional
 
-base_url = "http://iamwh.cn:5700"
+base_url = "http://127.0.0.1:5700"
 
 
 def send_private_msg(user_id: int, message: str, auto_escape: bool=False) -> int:
